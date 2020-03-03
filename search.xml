@@ -4,13 +4,19 @@
   
     
     <entry>
-      <title>article title</title>
-      <link href="/2020/02/06/article-title/"/>
-      <url>/2020/02/06/article-title/</url>
+      <title>THE FIRST MOON PIE</title>
+      <link href="/2020/03/03/article-title/"/>
+      <url>/2020/03/03/article-title/</url>
       
-        <content type="html"><![CDATA[<p>这是一条你的朋友小王发来的试探信息。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="THE-FIRST-MOON-PIE"><a href="#THE-FIRST-MOON-PIE" class="headerlink" title="THE FIRST MOON PIE"></a>THE FIRST MOON PIE</h1><p>感觉高中毕业以后再也没写过这种闲谈的日志，有点害羞哩。</p><p><strong>三月</strong>到啦，这可能是除了夏天外，一年里我最喜欢的月份。<br>春天来了，气温上升，可以穿的<strong>轻飘飘</strong>~<br>我和无甜味的<strong>生日</strong>也要来了！接下来还会有很多好朋友过生日！<br>随着春暖花开，人好像也有了<strong>振作起来</strong>的动力，虽然年年如此，但是还是会感到幸福。</p><p>开这个博客的初衷，是为了<del>有地方能记录我的碎碎念</del>学会前端找个实习。<br>不知不觉就到研二下学期啦，因为疫情的缘故开学还不知道要到什么时候。<br>人还在家里享受安逸，现实却摆在眼前啦。<br><strong>好怕找不到工作啊！</strong><br>不管怎样，哪怕每天进步一点点，为了未来而努力吧！</p><hr><h3 id="制定一下本月并不会完成的计划吧！"><a href="#制定一下本月并不会完成的计划吧！" class="headerlink" title="制定一下本月并不会完成的计划吧！"></a><strong>制定一下本月<del>并不会完成的</del>计划吧！</strong></h3><ul><li>学一遍HTML+CSS+JS的基本教程</li><li>每天背至少一百个单词（已经坚持了28天啦）</li><li>减肥5斤</li><li>每晚做天鹅臂+周六野斜方肌</li><li>看完三篇论文（明天就看）</li></ul><hr><p><img src="https://raw.githubusercontent.com/Kaaaaaaious/FigBed/master/img/bear2.jpg" alt="三月开冲！" title="我就试试看能不能贴图"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 碎碎念 </tag>
+            
+        </tags>
       
     </entry>
     
