@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>JENKAI</title>
+      <link href="/2020/03/10/JENKAI/"/>
+      <url>/2020/03/10/JENKAI/</url>
+      
+        <content type="html"><![CDATA[<h1 id="JENKAI-IS-REAL"><a href="#JENKAI-IS-REAL" class="headerlink" title="JENKAI IS REAL"></a>JENKAI IS REAL</h1><p>其实我写这篇只是为了测试怎样传图会比较好，GitHub图床经常崩啊会加载不出来。</p><p>![alt](JENKAI (6).jpg)<br><br>![alt](JENKAI (2).jpg)<br><br>![alt](JENKAI (3).jpg)<br><br>![alt](JENKAI (4).jpg)<br><br>![alt](JENKAI (5).jpg)<br><br>![alt](JENKAI (11).jpg)<br><br>![alt](JENKAI (18).jpg)<br><br>![alt](JENKAI (13).jpg)<br><br>![alt](JENKAI (19).jpg)<br><br>![alt](JENKAI (15).jpg)<br></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 碎碎念 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 碎碎念 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>To be a skimmed moon pie</title>
       <link href="/2020/03/10/To-be-a-skimmed-moon-pie/"/>
       <url>/2020/03/10/To-be-a-skimmed-moon-pie/</url>
