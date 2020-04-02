@@ -474,25 +474,25 @@ part2 一些">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前端笔记02"><a href="#前端笔记02" class="headerlink" title="前端笔记02"></a>前端笔记02</h1><h2 id="part1-数据库所需软件安装"><a href="#part1-数据库所需软件安装" class="headerlink" title="part1 数据库所需软件安装"></a>part1 数据库所需软件安装</h2><h4 id="WampServer的下载方法"><a href="#WampServer的下载方法" class="headerlink" title="WampServer的下载方法"></a>WampServer的下载方法</h4><p><a href="https://www.cnblogs.com/Sabre/p/6728818.html" target="_blank">WampServer的下载方法</a> 亲测有效</p>
-<h4 id="Navicat-premium-15-的下载和激活"><a href="#Navicat-premium-15-的下载和激活" class="headerlink" title="Navicat premium 15 的下载和激活"></a>Navicat premium 15 的下载和激活</h4><p><a href="https://www.cnblogs.com/asio/p/12208841.html" target="_blank">Navicat premium15 的下载和激活</a> 亲测有效</p>
+                <h1 id="前端笔记02"><a href="#前端笔记02" class="headerlink" title="前端笔记02"></a>前端笔记02</h1><h2 id="part1-数据库所需软件安装"><a href="#part1-数据库所需软件安装" class="headerlink" title="part1 数据库所需软件安装"></a>part1 数据库所需软件安装</h2><h3 id="WampServer的下载方法"><a href="#WampServer的下载方法" class="headerlink" title="WampServer的下载方法"></a>WampServer的下载方法</h3><p><a href="https://www.cnblogs.com/Sabre/p/6728818.html" target="_blank">WampServer的下载方法</a> 亲测有效</p>
+<h3 id="Navicat-premium-15-的下载和激活"><a href="#Navicat-premium-15-的下载和激活" class="headerlink" title="Navicat premium 15 的下载和激活"></a>Navicat premium 15 的下载和激活</h3><p><a href="https://www.cnblogs.com/asio/p/12208841.html" target="_blank">Navicat premium15 的下载和激活</a> 亲测有效</p>
 <h2 id="part2-一些补充"><a href="#part2-一些补充" class="headerlink" title="part2 一些补充"></a>part2 一些补充</h2><p>学到这里开始产生疑问：<a href="https://www.bilibili.com/video/BV11x41197VK?p=62" target="_blank">Node.js-前端渲染-后台接口json、jsonp和restful</a></p>
-<h4 id="前端渲染和后端渲染"><a href="#前端渲染和后端渲染" class="headerlink" title="前端渲染和后端渲染"></a>前端渲染和后端渲染</h4><h5 id="后端渲染"><a href="#后端渲染" class="headerlink" title="后端渲染"></a>后端渲染</h5><p><strong>所有页面都是在后台生成的。通过浏览器发送一个请求，得到的内容是一个完整的页面。</strong><br>服务器解析存放在服务器端的模板文件后，浏览器直接收到服务器呈现给用户的最终的HTML字符串。<br>浏览器只进行了HTML的解析，以及在显示器上把HTML所代表的图像显示给用户（通过操作系统提供的，用于使显示器显示内容的系统调用来实现）</p>
-<h5 id="前端渲染"><a href="#前端渲染" class="headerlink" title="前端渲染"></a>前端渲染</h5><p><strong>基于后台接口，通过请求接口返回的数据，将数据渲染出来。后端只写接口，分工更明细。</strong><br>浏览器会从后端得到一些信息，这些信息或许是适用于题主所说的angularjs的模板文件，亦或是JSON等各种数据交换格式所包装的数据，甚至是直接的合法的HTML字符串。这些形式都不重要，重要的是，将这些信息组织排列形成最终可读的HTML字符串是由浏览器来完成的，在形成了HTML字符串之后，再进行显示</p>
-<h5 id="二者比较"><a href="#二者比较" class="headerlink" title="二者比较"></a>二者比较</h5><ul>
+<h3 id="前端渲染和后端渲染"><a href="#前端渲染和后端渲染" class="headerlink" title="前端渲染和后端渲染"></a>前端渲染和后端渲染</h3><h4 id="后端渲染"><a href="#后端渲染" class="headerlink" title="后端渲染"></a>后端渲染</h4><p><strong>所有页面都是在后台生成的。通过浏览器发送一个请求，得到的内容是一个完整的页面。</strong><br>服务器解析存放在服务器端的模板文件后，浏览器直接收到服务器呈现给用户的最终的HTML字符串。<br>浏览器只进行了HTML的解析，以及在显示器上把HTML所代表的图像显示给用户（通过操作系统提供的，用于使显示器显示内容的系统调用来实现）</p>
+<h4 id="前端渲染"><a href="#前端渲染" class="headerlink" title="前端渲染"></a>前端渲染</h4><p><strong>基于后台接口，通过请求接口返回的数据，将数据渲染出来。后端只写接口，分工更明细。</strong><br>浏览器会从后端得到一些信息，这些信息或许是适用于题主所说的angularjs的模板文件，亦或是JSON等各种数据交换格式所包装的数据，甚至是直接的合法的HTML字符串。这些形式都不重要，重要的是，将这些信息组织排列形成最终可读的HTML字符串是由浏览器来完成的，在形成了HTML字符串之后，再进行显示</p>
+<h4 id="二者比较"><a href="#二者比较" class="headerlink" title="二者比较"></a>二者比较</h4><ul>
 <li>在性能上，后端渲染不如前端渲染，因为后端渲染将所有的HTML生成集中在了一个服务器上，而前端渲染将这部分工作分发到各个终端上。</li>
 <li>对于开发而言，前端渲染能够避免后端开发人员过多的编写HTML代码，后端开发人员只需和前端开发事先商定好数据格式，后端只需将数据生成，用数据交换格式包装，再发送出去就可以了，这样能够使开发人员之间的分工更加明确。</li>
 </ul>
 <p><strong>参考链接：</strong><br><a href="https://blog.csdn.net/zfz5720/article/details/85095845" target="_blank" rel="noopener">https://blog.csdn.net/zfz5720/article/details/85095845</a><br><a href="https://www.jianshu.com/p/14c3c4f61d90" target="_blank" rel="noopener">https://www.jianshu.com/p/14c3c4f61d90</a></p>
 <hr>
-<h4 id="JSON、JSONP（JSON-with-Padding）的区别："><a href="#JSON、JSONP（JSON-with-Padding）的区别：" class="headerlink" title="JSON、JSONP（JSON with Padding）的区别："></a>JSON、JSONP（JSON with Padding）的区别：</h4><ul>
+<h3 id="JSON、JSONP-JSON-with-Paddin-的区别"><a href="#JSON、JSONP-JSON-with-Paddin-的区别" class="headerlink" title="JSON、JSONP(JSON with Paddin)的区别"></a>JSON、JSONP(JSON with Paddin)的区别</h3><ul>
 <li>JSON是一种数据交换格式，JSONP是 一种非官方跨域数据交互协议。</li>
 <li>JSON是“暗号”，JSONP则是接头方式。</li>
 <li>JSON是描述信息的格式，JSONP是信息传递双方约定的方法。</li>
 <li>JSON返回的是一串数据，JSONP返回的是脚本代码(包含一个函数调用)</li>
 </ul>
-<h4 id="CORS跨域资源共享"><a href="#CORS跨域资源共享" class="headerlink" title="CORS跨域资源共享"></a>CORS跨域资源共享</h4><h5 id="跨域问题"><a href="#跨域问题" class="headerlink" title="跨域问题"></a>跨域问题</h5><p>浏览器从一个域名的网页去请求另一个域名的资源时，域名、端口、协议任一不同，都是跨域。<br>接口在一台服务器（或者端口）上，前端和页面服务在另一台服务器（或者端口）上，从前端获取接口数据出现跨域问题。</p>
-<h5 id="解决方式："><a href="#解决方式：" class="headerlink" title="解决方式："></a>解决方式：</h5><ol>
+<h3 id="CORS跨域资源共享"><a href="#CORS跨域资源共享" class="headerlink" title="CORS跨域资源共享"></a>CORS跨域资源共享</h3><h4 id="跨域问题"><a href="#跨域问题" class="headerlink" title="跨域问题"></a>跨域问题</h4><p>浏览器从一个域名的网页去请求另一个域名的资源时，域名、端口、协议任一不同，都是跨域。<br>接口在一台服务器（或者端口）上，前端和页面服务在另一台服务器（或者端口）上，从前端获取接口数据出现跨域问题。</p>
+<h4 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h4><ol>
 <li>修改响应头res.header（”Access-Control-Allow-Origin”,”*”）</li>
 <li>JSONP<br>JSONP原理：我们通过href或者src去请求下来的js脚本/css文件/img图片文件/视频文件都不存在跨域问题，只有通过Ajax请求请求下来的数据才存在跨域问题。<br>JSONP只支持get请求、不支持post请求(类似往页面添加一个script标签，通过src属性去触发对指定地址的请求,故只能是get请求)</li>
 </ol>
@@ -746,32 +746,29 @@ part2 一些">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/03/31/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B002/">
+                <a href="/2020/04/02/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B003/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="前端笔记02">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="前端笔记03">
                         
-                        <span class="card-title">前端笔记02</span>
+                        <span class="card-title">前端笔记03</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前端笔记02part1 数据库所需软件安装WampServer的下载方法WampServer的下载方法 亲测有效
-Navicat premium 15 的下载和激活Navicat premium15 的下载和激活 亲测有效
-part2 一些
+                            前端笔记03req.params,req.query,req.body的区别req.params用在get请求当中url： http://localhost:3000/books/book/1使用：把请求 / 后面的参数当成id，通过req
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-31
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-02
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -784,7 +781,6 @@ part2 一些
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -990,7 +986,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3k</span>&nbsp;字
+                class="white-color">8.3k</span>&nbsp;字
             
             
             
