@@ -4,10 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="前端笔记02, MOONPIE">
-    <meta name="description" content="前端笔记02part1 数据库所需软件安装WampServer的下载方法WampServer的下载方法 亲测有效
-Navicat premium 15 的下载和激活Navicat premium15 的下载和激活 亲测有效
-part2 一些">
+    <meta name="keywords" content="webpack笔记, MOONPIE">
+    <meta name="description" content="webpack笔记webpack打包Webpack 可以做什么事情？
+
+webpack 能够处理 JS 文件的互相依赖关系；
+webpack 能够处理JS的兼容问题，把 高级的、浏览器不是别的语法，转为 低级的，浏览器能正常识别的语法
+
+打">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +18,7 @@ part2 一些">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>前端笔记02 | MOONPIE</title>
+    <title>webpack笔记 | MOONPIE</title>
     <link rel="icon" type="image/jpeg" href="/logoo.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -305,12 +308,12 @@ part2 一些">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">前端笔记02</h1>
+                    <h1 class="description center-align post-title">webpack笔记</h1>
                 </div>
             </div>
         </div>
@@ -427,8 +430,8 @@ part2 一些">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                <span class="chip bg-color">前端</span>
+                            <a href="/tags/webpack/">
+                                <span class="chip bg-color">webpack</span>
                             </a>
                         
                     </div>
@@ -439,8 +442,8 @@ part2 一些">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                前端
+                            <a href="/categories/webpack/" class="post-category">
+                                webpack
                             </a>
                         
                     </div>
@@ -452,7 +455,7 @@ part2 一些">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-31
+                    2020-04-09
                 </div>
                 
 
@@ -461,7 +464,7 @@ part2 一些">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    2.9k
                 </div>
                 
 
@@ -474,52 +477,253 @@ part2 一些">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前端笔记02"><a href="#前端笔记02" class="headerlink" title="前端笔记02"></a>前端笔记02</h1><h2 id="part1-数据库所需软件安装"><a href="#part1-数据库所需软件安装" class="headerlink" title="part1 数据库所需软件安装"></a>part1 数据库所需软件安装</h2><h3 id="WampServer的下载方法"><a href="#WampServer的下载方法" class="headerlink" title="WampServer的下载方法"></a>WampServer的下载方法</h3><p><a href="https://www.cnblogs.com/Sabre/p/6728818.html" target="_blank">WampServer的下载方法</a> 亲测有效</p>
-<h3 id="Navicat-premium-15-的下载和激活"><a href="#Navicat-premium-15-的下载和激活" class="headerlink" title="Navicat premium 15 的下载和激活"></a>Navicat premium 15 的下载和激活</h3><p><a href="https://www.cnblogs.com/asio/p/12208841.html" target="_blank">Navicat premium15 的下载和激活</a> 亲测有效</p>
-<h2 id="part2-一些补充"><a href="#part2-一些补充" class="headerlink" title="part2 一些补充"></a>part2 一些补充</h2><p>学到这里开始产生疑问：<a href="https://www.bilibili.com/video/BV11x41197VK?p=62" target="_blank">Node.js-前端渲染-后台接口json、jsonp和restful</a></p>
-<h3 id="前端渲染和后端渲染"><a href="#前端渲染和后端渲染" class="headerlink" title="前端渲染和后端渲染"></a>前端渲染和后端渲染</h3><h4 id="后端渲染"><a href="#后端渲染" class="headerlink" title="后端渲染"></a>后端渲染</h4><p><strong>所有页面都是在后台生成的。通过浏览器发送一个请求，得到的内容是一个完整的页面。</strong><br>服务器解析存放在服务器端的模板文件后，浏览器直接收到服务器呈现给用户的最终的HTML字符串。<br>浏览器只进行了HTML的解析，以及在显示器上把HTML所代表的图像显示给用户（通过操作系统提供的，用于使显示器显示内容的系统调用来实现）</p>
-<h4 id="前端渲染"><a href="#前端渲染" class="headerlink" title="前端渲染"></a>前端渲染</h4><p><strong>基于后台接口，通过请求接口返回的数据，将数据渲染出来。后端只写接口，分工更明细。</strong><br>浏览器会从后端得到一些信息，这些信息或许是适用于题主所说的angularjs的模板文件，亦或是JSON等各种数据交换格式所包装的数据，甚至是直接的合法的HTML字符串。这些形式都不重要，重要的是，将这些信息组织排列形成最终可读的HTML字符串是由浏览器来完成的，在形成了HTML字符串之后，再进行显示</p>
-<h4 id="二者比较"><a href="#二者比较" class="headerlink" title="二者比较"></a>二者比较</h4><ul>
-<li>在性能上，后端渲染不如前端渲染，因为后端渲染将所有的HTML生成集中在了一个服务器上，而前端渲染将这部分工作分发到各个终端上。</li>
-<li>对于开发而言，前端渲染能够避免后端开发人员过多的编写HTML代码，后端开发人员只需和前端开发事先商定好数据格式，后端只需将数据生成，用数据交换格式包装，再发送出去就可以了，这样能够使开发人员之间的分工更加明确。</li>
+                <h1 id="webpack笔记"><a href="#webpack笔记" class="headerlink" title="webpack笔记"></a>webpack笔记</h1><h2 id="webpack打包"><a href="#webpack打包" class="headerlink" title="webpack打包"></a>webpack打包</h2><p>Webpack 可以做什么事情？</p>
+<ol>
+<li>webpack 能够处理 JS 文件的互相依赖关系；</li>
+<li>webpack 能够处理JS的兼容问题，把 高级的、浏览器不是别的语法，转为 低级的，浏览器能正常识别的语法</li>
+</ol>
+<h2 id="打包遇到的坑"><a href="#打包遇到的坑" class="headerlink" title="打包遇到的坑"></a>打包遇到的坑</h2><ul>
+<li>打包方法：<code>webpack  要打包的文件的路径  打包好的输出文件的路径</code></li>
 </ul>
-<p><strong>参考链接：</strong><br><a href="https://blog.csdn.net/zfz5720/article/details/85095845" target="_blank" rel="noopener">https://blog.csdn.net/zfz5720/article/details/85095845</a><br><a href="https://www.jianshu.com/p/14c3c4f61d90" target="_blank" rel="noopener">https://www.jianshu.com/p/14c3c4f61d90</a></p>
-<hr>
-<h3 id="JSON、JSONP-JSON-with-Paddin-的区别"><a href="#JSON、JSONP-JSON-with-Paddin-的区别" class="headerlink" title="JSON、JSONP(JSON with Paddin)的区别"></a>JSON、JSONP(JSON with Paddin)的区别</h3><ul>
-<li>JSON是一种数据交换格式，JSONP是 一种非官方跨域数据交互协议。</li>
-<li>JSON是“暗号”，JSONP则是接头方式。</li>
-<li>JSON是描述信息的格式，JSONP是信息传递双方约定的方法。</li>
-<li>JSON返回的是一串数据，JSONP返回的是脚本代码(包含一个函数调用)</li>
+<h3 id="坑1"><a href="#坑1" class="headerlink" title="坑1"></a>坑1</h3><ul>
+<li>已全局安装webpack：<code>npm i webpack -g</code><br>执行<code>webpack .\src\main.js -o .\dist\bundle.js</code>,加<code>-o</code>是4以上版本的语法</li>
 </ul>
-<h3 id="CORS跨域资源共享"><a href="#CORS跨域资源共享" class="headerlink" title="CORS跨域资源共享"></a>CORS跨域资源共享</h3><h4 id="跨域问题"><a href="#跨域问题" class="headerlink" title="跨域问题"></a>跨域问题</h4><ul>
-<li><strong>浏览器的同源策略</strong>会导致跨域，这里同源策略又分为以下两种<ul>
-<li>DOM同源策略：禁止对不同源页面DOM进行操作。这里主要场景是iframe跨域的情况，不同域名的iframe是限制互相访问的。</li>
-<li>XmlHttpRequest同源策略：禁止使用XHR对象向不同源的服务器地址发起HTTP请求。只要<strong>协议、域名、端口</strong>有任何一个不同，都被当作是不同的域，之间的请求就是跨域操作。</li>
+<p><strong>报错</strong></p>
+<pre><code>webpack : 无法加载文件 C:\Users\Kaious\AppData\Roaming\npm\webpack.ps1，因为在此系统上禁止运行脚本。有关详细信息，请参阅 https:/go.micr
+osoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies。</code></pre><p><strong>解决方法</strong><br>参考：<a href="http://www.bubuko.com/infodetail-3481466.html" target="_blank" rel="noopener">解决方法</a></p>
+<ol>
+<li>使用管理员身份打开PowerShell</li>
+<li>键入Set-ExecutionPolicy RemoteSigned命令</li>
+<li>键入Y</li>
+<li>最后可以使用Get-ExecutionPolicy来看看是否修改成功</li>
+</ol>
+<h3 id="坑2"><a href="#坑2" class="headerlink" title="坑2"></a>坑2</h3><ul>
+<li>再次执行<code>webpack .\src\main.js -o .\dist\bundle.js</code></li>
 </ul>
+<p><strong>报错</strong></p>
+<pre><code>webpack not installed
+
+Install webpack to start bundling:
+  $ npm install --save-dev webpack</code></pre><p>按照指示<code>npm install --save-dev webpack</code>还是不行<br><strong>解决方法</strong></p>
+<ul>
+<li>需要全局安装webpack-cli：<code>npm install webpack-cli -g</code></li>
+</ul>
+<h3 id="坑3"><a href="#坑3" class="headerlink" title="坑3"></a>坑3</h3><ul>
+<li>再次执行<code>webpack .\src\main.js -o .\dist\bundle.js</code></li>
+</ul>
+<p><strong>警告</strong></p>
+<pre><code>WARNING in configuration
+The 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
+You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/</code></pre><p><strong>解决方法</strong></p>
+<ul>
+<li>执行<code>webpack .\src\main.js -o .\dist\bundle.js --mode=development</code></li>
+</ul>
+<p><strong>大功告成！</strong></p>
+<pre><code>Hash: 66bd1d851b4e3101e4b1
+Version: webpack 4.42.1
+Time: 252ms
+Built at: 2020-04-09 0:05:01
+    Asset     Size  Chunks             Chunk Names
+bundle.js  316 KiB    main  [emitted]  main
+Entrypoint main = bundle.js
+[./src/main.js] 1.53 KiB {main} [built]
+    + 1 hidden module</code></pre><h2 id="使用webpack的配置文件简化打包时候的命令"><a href="#使用webpack的配置文件简化打包时候的命令" class="headerlink" title="使用webpack的配置文件简化打包时候的命令"></a>使用webpack的配置文件简化打包时候的命令</h2><ol>
+<li><p>在项目根目录中创建<code>webpack.config.js</code></p>
+</li>
+<li><p>由于运行webpack命令的时候，webpack需要指定入口文件和输出文件的路径，所以，我们需要在<code>webpack.config.js</code>中配置这两个路径：</p>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token comment" spellcheck="true">// 导入处理路径的模块</span>
+ <span class="token keyword">var</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token comment" spellcheck="true">// 导出一个配置对象，将来webpack在启动的时候，会默认来查找webpack.config.js，并读取这个文件中导出的配置对象，来进行打包处理</span>
+ module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+     entry<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src/js/main.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 项目入口文件</span>
+     output<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 配置输出选项</span>
+         path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 配置输出的路径</span>
+         filename<span class="token punctuation">:</span> <span class="token string">'bundle.js'</span> <span class="token comment" spellcheck="true">// 配置输出的文件名</span>
+     <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span></code></pre>
+</li>
+</ol>
+<p>当我们在 控制台，直接输入 <code>webpack</code>命令执行的时候，<code>webpack</code> 做了以下几步：</p>
+<ol>
+<li>首先，<code>webpack</code> 发现，我们并没有通过命令的形式，给它指定入口和出口</li>
+<li><code>webpack</code> 就会去 项目的 根目录中，查找一个叫做 <code>webpack.config.js</code> 的配置文件</li>
+<li>当找到配置文件后，<code>webpack</code> 会去解析执行这个 配置文件，当解析执行完配置文件后，就得到了 配置文件中，导出的配置对象<code>module</code></li>
+<li>当 <code>webpack</code> 拿到 配置对象<code>module</code>后，就拿到了 配置对象中，指定的 入口  和 出口，然后进行打包构建；</li>
+</ol>
+<h2 id="实现webpack的实时打包构建"><a href="#实现webpack的实时打包构建" class="headerlink" title="实现webpack的实时打包构建"></a>实现webpack的实时打包构建</h2><p>由于每次重新修改代码之后，都需要手动运行webpack打包的命令，比较麻烦。所以使用<code>webpack-dev-server</code>来实现代码<strong><em>实时打包编译</em></strong>，当修改代码之后，会自动进行打包构建</p>
+<ol>
+<li>项目根目录下运行<code>cnpm i webpack-dev-server --save-dev</code>安装到开发依赖</li>
+<li>安装完成之后，在命令行直接运行<code>webpack-dev-server</code>来进行打包，发现报错，<br>在项目中本地安装的<code>webpack-dev-server</code>，无法把它当作脚本命令在powershell终端直接运行（只有全局-g的工具才能在终端正常执行）<br>此时需要借助于<code>package.json</code>文件中的指令，来进行运行<code>webpack-dev-server</code>命令，在<code>scripts</code>节点下新增<code>"dev": "webpack-dev-server"</code>指令，发现可以进行实时打包，</li>
+</ol>
+<p>运行<code>$npm run dev</code><br>输出信息：</p>
+<pre><code>webpack-dev-server
+
+Project is running at http://localhost:8080/
+webpack output is served from /
+Hash: a399444d432f5f8fa762
+Version: webpack 3.12.0
+Time: 493ms
+    Asset    Size  Chunks                    Chunk Names
+bundle.js  613 kB       0  [emitted]  [big]  main
+   [2] multi ./node_modules/_webpack-dev-server@2.11.5@webpack-dev-server/client?http://localhost:8080 ./src/main.js 40 bytes {0} [built]
+   [3] ./node_modules/_webpack-dev-server@2.11.5@webpack-dev-server/client?http://localhost:8080 7.93 kB {0} [built]
+   [4] ./node_modules/url/url.js 23.3 kB {0} [built]
+   [5] ./node_modules/node-libs-browser/node_modules/punycode/punycode.js 14.7 kB {0} [built]
+   [7] ./node_modules/url/util.js 314 bytes {0} [built]
+   [8] ./node_modules/querystring-es3/index.js 127 bytes {0} [built]
+  [11] ./node_modules/_strip-ansi@3.0.1@strip-ansi/index.js 161 bytes {0} [built]
+  [12] ./node_modules/_ansi-regex@2.1.1@ansi-regex/index.js 135 bytes {0} [built]
+  [13] ./node_modules/_loglevel@1.6.7@loglevel/lib/loglevel.js 8.61 kB {0} [built]
+  [14] ./node_modules/_webpack-dev-server@2.11.5@webpack-dev-server/client/socket.js 1.08 kB {0} [built]
+  [16] ./node_modules/_webpack-dev-server@2.11.5@webpack-dev-server/client/overlay.js 3.67 kB {0} [built]
+  [21] (webpack)/hot nonrecursive ^\.\/log$ 170 bytes {0} [built]
+  [23] (webpack)/hot/emitter.js 77 bytes {0} [built]
+  [25] ./src/main.js 1.57 kB {0} [built]
+  [26] ./node_modules/jquery/dist/jquery.js 280 kB {0} [built]
+    + 12 hidden modules
+webpack: Compiled successfully.</code></pre><h3 id="bundle-js放在内存中"><a href="#bundle-js放在内存中" class="headerlink" title="bundle.js放在内存中"></a><code>bundle.js</code>放在内存中</h3><p>但是dist目录下并没有生成<code>bundle.js</code>文件，这是因为<code>webpack-dev-server</code>将打包好的文件放在了内存中,以一种虚拟的形式托管到根目录（看不到），和<code>src</code>，<code>dist</code>平级</p>
+<ul>
+<li>把<code>bundle.js</code>放在内存中的好处是：由于需要实时打包编译，所以放在内存中速度会非常快</li>
+<li>这个时候访问webpack-dev-server启动的<code>http://localhost:8080/</code>网站，发现是一个文件夹的面板，需要点击到<code>src</code>目录下，才能打开我们的<code>index</code>首页，此时引用不到<code>bundle.js</code>文件，需要修改<code>index.html</code>中<code>script</code>的<code>src</code>属性为:<code>&lt;script src="../bundle.js"&gt;&lt;/script&gt;</code></li>
+<li>为了能在访问<code>http://localhost:8080/</code>的时候直接访问到index首页，可以使用<code>--contentBase src</code>指令来修改dev指令，指定启动的根目录：</li>
+</ul>
+<h3 id="在package-json文件配置启动页面"><a href="#在package-json文件配置启动页面" class="headerlink" title="在package.json文件配置启动页面"></a>在<code>package.json</code>文件配置启动页面</h3><p><code>package.json</code>文件中，在<code>scripts</code>节点下<code>"dev"</code>改为<br> <code>"dev": "webpack-dev-server --open --port 3000 --contentBase src --hot"</code></p>
+<ul>
+<li><code>--open</code> 自动打开浏览器</li>
+<li><code>--port 3000</code> 端口号为3000</li>
+<li><code>--contentBase src</code> 自动显示scr目录下内容</li>
+<li><code>--hot</code>可以实现异步刷新，例如改变css元素不会刷新页面<br>同时修改index页面中script的src属性为<code>&lt;script src="bundle.js"&gt;&lt;/script&gt;</code></li>
+</ul>
+<h3 id="使用html-webpack-plugin插件配置启动页面"><a href="#使用html-webpack-plugin插件配置启动页面" class="headerlink" title="使用html-webpack-plugin插件配置启动页面"></a>使用<code>html-webpack-plugin</code>插件配置启动页面</h3><p>由于使用<code>--contentBase</code>指令的过程比较繁琐，需要指定启动的目录，同时还需要修改<code>index.html</code>中<code>script</code>标签的<code>src</code>属性，所以推荐大家使用<code>html-webpack-plugin</code>插件配置启动页面.</p>
+<ol>
+<li><p>运行<code>cnpm i html-webpack-plugin --save-dev</code>安装到开发依赖</p>
+</li>
+<li><p>修改<code>webpack.config.js</code>配置文件如下：</p>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token comment" spellcheck="true">// 导入处理路径的模块</span>
+ <span class="token keyword">var</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token comment" spellcheck="true">// 导入自动生成HTMl文件的插件</span>
+ <span class="token keyword">var</span> htmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+     entry<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src/js/main.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 项目入口文件</span>
+     output<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 配置输出选项</span>
+         path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 配置输出的路径</span>
+         filename<span class="token punctuation">:</span> <span class="token string">'bundle.js'</span> <span class="token comment" spellcheck="true">// 配置输出的文件名</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span>
+     plugins<span class="token punctuation">:</span><span class="token punctuation">[</span> <span class="token comment" spellcheck="true">// 添加plugins节点配置插件</span>
+         <span class="token keyword">new</span> <span class="token class-name">htmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+             template<span class="token punctuation">:</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src/index.html'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">//模板路径</span>
+             filename<span class="token punctuation">:</span><span class="token string">'index.html'</span><span class="token comment" spellcheck="true">//自动生成的HTML文件的名称</span>
+         <span class="token punctuation">}</span><span class="token punctuation">)</span>
+     <span class="token punctuation">]</span>
+ <span class="token punctuation">}</span></code></pre>
+</li>
+</ol>
+<h4 id="htmlWebpackPlugin插件的两个作用："><a href="#htmlWebpackPlugin插件的两个作用：" class="headerlink" title="htmlWebpackPlugin插件的两个作用："></a><code>htmlWebpackPlugin</code>插件的两个作用：</h4><ol>
+<li>自动在<strong><code>内存中</code></strong>根据指定页面生成一个内存的页面</li>
+<li>自动把打包好的 <code>bundle.js</code> 追加到页面中去,当使用<code>html-webpack-plugin</code>之后，我们不再需要手动处理<code>bundle.js</code>的引用路径了，因为这个插件，已经帮我们自动创建了一个合适的<code>script</code> , 并且引用了正确的路径</li>
+</ol>
+<h4 id="配置启动页面步骤（启动hot更新）"><a href="#配置启动页面步骤（启动hot更新）" class="headerlink" title="配置启动页面步骤（启动hot更新）"></a>配置启动页面步骤（启动hot更新）</h4><ol>
+<li>修改<code>webpack.config.js</code>文件，<code>module</code>中新增<code>devServer</code>节点如下：<pre class=" language-javascript"><code class="language-javascript">devServer<span class="token punctuation">:</span><span class="token punctuation">{</span>
+ <span class="token comment" spellcheck="true">//  --open --port 3000 --contentBase src --hot</span>
+ open<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 自动打开浏览器</span>
+ port<span class="token punctuation">:</span> <span class="token number">3000</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 设置启动时候的运行端口</span>
+ contentBase<span class="token punctuation">:</span> <span class="token string">'src'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 指定托管的根目录</span>
+ hot<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token comment" spellcheck="true">// 启用热更新 的 第1步</span>
+ <span class="token punctuation">}</span></code></pre>
+</li>
+<li>在头部引入<code>webpack</code>模块：<pre><code>var webpack = require('webpack');</code></pre></li>
+<li>在<code>plugins</code>节点下新增：<pre><code>new webpack.HotModuleReplacementPlugin()</code></pre></li>
+</ol>
+<h2 id="webpack处理第三方文件类型"><a href="#webpack处理第三方文件类型" class="headerlink" title="webpack处理第三方文件类型"></a>webpack处理第三方文件类型</h2><ol>
+<li>发现要处理的文件不是<code>js</code>文件，去配置文件中查找有没有对应的第三方<code>loader</code>规则</li>
+<li>如果找到对应规则，调用对应<code>loader</code>处理文件</li>
+<li><code>loader</code>模块的调用顺序是<strong><code>从后向前</code></strong>调用的</li>
+<li>最后一个<code>loader</code>调用完毕，把处理的结果直接交给<code>webpack</code>打包合并，最终输出到<code>bundle.js</code></li>
+</ol>
+<h3 id="使用webpack打包css文件"><a href="#使用webpack打包css文件" class="headerlink" title="使用webpack打包css文件"></a>使用webpack打包css文件</h3><ol>
+<li>运行<code>cnpm i style-loader css-loader --save-dev</code></li>
+<li>修改<code>webpack.config.js</code>这个配置文件：<ul>
+<li>在<code>module.exports = {}</code>里新增一个 配置节点，叫做 <code>module</code>, 它是一个对象</li>
+<li>在这个 <code>module</code> 对象身上，有个 <code>rules</code> 属性，是个数组；</li>
+<li>这个数组中，存放了所有第三方文件的匹配和处理规则；<pre class=" language-javascript"><code class="language-javascript">module<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 用来配置第三方loader模块的</span>
+  rules<span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token comment" spellcheck="true">// 文件的匹配规则</span>
+      <span class="token punctuation">{</span> test<span class="token punctuation">:</span> <span class="token regex">/\.css$/</span><span class="token punctuation">,</span> use<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'style-loader'</span><span class="token punctuation">,</span> <span class="token string">'css-loader'</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token comment" spellcheck="true">//处理css文件的规则</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 </ul>
-<p>浏览器从一个域名的网页去请求另一个域名的资源时，域名、端口、协议任一不同，都是跨域。<br>接口在一台服务器（或者端口）上，前端和页面服务在另一台服务器（或者端口）上，从前端获取接口数据出现跨域问题。</p>
-<h4 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h4><ol>
-<li>修改响应头res.header（”Access-Control-Allow-Origin”,”*”）</li>
-<li>JSONP<ul>
-<li>JSONP原理：<ul>
-<li>我们通过href或者src去请求下来的js脚本/css文件/img图片文件/视频文件都不存在跨域问题，只有通过Ajax请求请求下来的数据才存在跨域问题。</li>
-<li>可以通过动态创建script标签的形式，把script标签的src属性，指向数据接口的地址，因为script标签不存在跨域限制，这种数据获取方式，称作JSONP</li>
-<li>JSONP只支持get请求、不支持post请求(类似往页面添加一个script标签，通过src属性去触发对指定地址的请求,故只能是get请求)</li>
-</ul>
 </li>
-<li>实现过程：<ul>
-<li>先在客户端定义一个回调方法，预定义对数据的操作；</li>
-<li>再把这个回调方法的名称，通过URL传参的形式，提交到服务器的数据接口；</li>
-<li>服务器数据接口组织好要发送给客户端的数据，再拿着客户端传递过来的回调方法名称，拼接出一个调用这个方法的字符串，发送给客户端去解析执行；</li>
-<li>客户端拿到服务器返回的字符串之后，当作Script脚本去解析执行，这样就能够拿到JSONP的数据了。</li>
-</ul>
-</li>
+<li>注意：<ul>
+<li><code>use</code>表示使用哪些模块来处理<code>test</code>所匹配到的文件；</li>
+<li><code>use</code>中相关loader模块的调用顺序是从后向前调用的；</li>
 </ul>
 </li>
 </ol>
-<p><a href="https://www.bilibili.com/video/BV1Kt411E76z?from=search&amp;seid=7319513077122082066" target="_blank">CORS演示案例</a></p>
-<p><strong>参考链接：</strong><br><a href="https://blog.csdn.net/tjcjava/article/details/76468225" target="_blank" rel="noopener">https://blog.csdn.net/tjcjava/article/details/76468225</a><br><a href="https://www.cnblogs.com/guyun/p/4588674.html" target="_blank" rel="noopener">https://www.cnblogs.com/guyun/p/4588674.html</a><br><a href="https://www.zhihu.com/question/26376773/answer/244453931" target="_blank" rel="noopener">https://www.zhihu.com/question/26376773/answer/244453931</a><br><a href="https://segmentfault.com/a/1190000015597029" target="_blank" rel="noopener">https://segmentfault.com/a/1190000015597029</a></p>
+<h3 id="使用webpack打包less文件"><a href="#使用webpack打包less文件" class="headerlink" title="使用webpack打包less文件"></a>使用webpack打包less文件</h3><ol>
+<li>运行<code>cnpm i less-loader less -D</code></li>
+<li>修改<code>webpack.config.js</code>这个配置文件：<pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">{</span> test<span class="token punctuation">:</span> <span class="token regex">/\.less$/</span><span class="token punctuation">,</span> use<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'style-loader'</span><span class="token punctuation">,</span> <span class="token string">'css-loader'</span><span class="token punctuation">,</span> <span class="token string">'less-loader'</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
+</li>
+</ol>
+<h3 id="使用webpack打包sass文件"><a href="#使用webpack打包sass文件" class="headerlink" title="使用webpack打包sass文件"></a>使用webpack打包sass文件</h3><ol>
+<li>运行<code>cnpm i sass-loader node-sass --save-dev</code></li>
+<li>在<code>webpack.config.js</code>中添加处理sass文件的loader模块：<pre><code>{ test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] }</code></pre></li>
+</ol>
+<h3 id="使用webpack处理css中的路径"><a href="#使用webpack处理css中的路径" class="headerlink" title="使用webpack处理css中的路径"></a>使用webpack处理css中的路径</h3><ol>
+<li>运行<code>cnpm i url-loader file-loader --save-dev</code></li>
+<li>在<code>webpack.config.js</code>中添加处理url路径的loader模块：<pre><code>{ test: /\.(png|jpg|gif)$/, use: 'url-loader' }</code></pre></li>
+<li>可以通过<code>limit</code>指定进行base64编码的图片大小；只有小于指定字节（byte）的图片才会进行base64编码：<pre><code>{ test: /\.(png|jpg|gif)$/, use: 'url-loader?limit=43960' },</code></pre></li>
+</ol>
+<h2 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h2><ul>
+<li>webpack里面带<code>s</code>的都是数组，例如<code>plugins</code></li>
+<li><code>import *** from ***</code> 是ES6中导入模块的方式</li>
+<li><code>import './css/index.css'</code> 一般js才会<code>import *** from ***</code>，css直接<code>import</code></li>
+</ul>
+<h2 id="npm常用指令"><a href="#npm常用指令" class="headerlink" title="npm常用指令"></a>npm常用指令</h2><p><a href="https://blog.csdn.net/jwl_willon/article/details/81054978" target="_blank" rel="noopener">参考1</a>   <a href="https://www.cnblogs.com/yuesu/p/10980848.html
+">参考2</a></p>
+<ol>
+<li><p><code>npm install</code> &lt;=&gt; <code>npm i</code><br><code>--save</code>   &lt;=&gt; <code>-S</code><br><code>--save-dev</code>  &lt;=&gt; <code>-D</code><br><code>npm run start</code> &lt;=&gt; <code>npm start</code>  // 对应”scripts”里的”start”命令</p>
+</li>
+<li><p><code>npm i &lt;packname&gt;</code> </p>
+<ul>
+<li>安装模块到项目<code>node_modules</code>目录下</li>
+<li>不会修改<code>package.json</code>文件</li>
+<li>运行 <code>npm install</code> 初始化项目时不会下载模块</li>
+</ul>
+</li>
+<li><p><code>npm i --save-dev  &lt;packname&gt;</code>  </p>
+<ul>
+<li>安装模块到项目<code>node_modules</code>目录下</li>
+<li>并在<code>package</code>文件的<code>devDependencies</code>属性写入依赖</li>
+<li>运行 <code>npm install</code> 初始化项目时，会将模块下载到项目目录下</li>
+<li>运行<code>npm install --productio</code>n或者注明<code>NODE_ENV</code>变量值为<code>production</code>时，不会自动下载模块到<code>node_modules</code>目录中</li>
+<li>工程构建（开发时、“打包”时）依赖 ；例：xxx-cli , less-loader , babel-loader…</li>
+</ul>
+</li>
+<li><p><code>npm i --save &lt;packname&gt;</code> </p>
+<ul>
+<li>安装模块到项目<code>node_modules</code>目录下</li>
+<li>并在<code>package</code>文件的<code>dependencies</code>属性写入依赖</li>
+<li>运行 <code>npm install</code> 初始化项目时，会将模块下载到项目目录下</li>
+<li>运行<code>npm install --production</code>或者注明<code>NODE_ENV</code>变量值为<code>production</code>时，会自动下载模块到<code>node_modules</code>目录中</li>
+<li>项目（运行时、发布到生产环境时）依赖；例：antd , element,react…</li>
+</ul>
+</li>
+<li><p><code>npm i &lt;packname&gt; -g</code> </p>
+<ul>
+<li>-g 将模块安装到全局，具体安装到磁盘哪个位置，要看npm config prefix的位置。<br>查看：<code>npm config ls</code><br>修改：<code>npm config set prefix</code></li>
+<li>不会在项目node_modules目录中保存模块包</li>
+<li>不会修改package.json文件</li>
+<li>运行 npm install 初始化项目时不会下载模块</li>
+</ul>
+</li>
+<li><p>对应关系<br><img src="npm.png" alt="对应关系" title="关系"><br><img src="node_env.png" alt="`package.json=>script`命令中设置`NODE_ENV`" title="NODE_ENV"><br>使用原则:运行时需要用到的包使用<code>--save</code>，否则使用<code>--save-dev</code>。</p>
+</li>
+</ol>
+<ol start="7">
+<li>在新建<code>package.json</code>文件时，我们可以使用<code>npm init -y</code> 快速创建（yes 表示一路默认创建，还有 -f 表示 force）</li>
+</ol>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -563,7 +767,7 @@ part2 一些">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://kaaaaaaious.github.io/2020/03/31/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B002/">https://kaaaaaaious.github.io/2020/03/31/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B002/</a>
+                    <a href="https://kaaaaaaious.github.io/2020/04/09/webpack%E7%AC%94%E8%AE%B0/">https://kaaaaaaious.github.io/2020/04/09/webpack%E7%AC%94%E8%AE%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -601,8 +805,8 @@ part2 一些">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
+                                <a href="/tags/webpack/">
+                                    <span class="chip bg-color">webpack</span>
                                 </a>
                             
                         </div>
@@ -768,46 +972,53 @@ part2 一些">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/04/02/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B003/">
+                <a href="/2020/04/09/webpack%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="前端笔记03">
+                        <img src="/medias/featureimages/7.png" class="responsive-img" alt="webpack笔记">
                         
-                        <span class="card-title">前端笔记03</span>
+                        <span class="card-title">webpack笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前端笔记03req.params,req.query,req.body的区别req.params用在get请求当中url： http://localhost:3000/books/book/1使用：把请求 / 后面的参数当成id，通过req
+                            webpack笔记webpack打包Webpack 可以做什么事情？
+
+webpack 能够处理 JS 文件的互相依赖关系；
+webpack 能够处理JS的兼容问题，把 高级的、浏览器不是别的语法，转为 低级的，浏览器能正常识别的语法
+
+打
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/webpack/" class="post-category">
+                                    webpack
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/webpack/">
+                        <span class="chip bg-color">webpack</span>
                     </a>
                     
                 </div>
@@ -821,25 +1032,28 @@ part2 一些">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/26/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B001/">
+                <a href="/2020/04/08/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B005/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.png" class="responsive-img" alt="前端笔记01">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="前端笔记05">
                         
-                        <span class="card-title">前端笔记01</span>
+                        <span class="card-title">前端笔记05</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前端笔记01Web基础文字教程HTMLCSSJavaScript VUE（只适合了解基本语法，可直接看视频教程）
-VUE视频教程VUE视频教程P38 18.vue-resource发起get、post、jsonp请求P39 19.结合Nod
+                            前端笔记05localstorage可参考vue中使用localStorage存储信息
+对浏览器来说，使用Web Storage存储键值对比存储Cookie方式更直观，而且容量更大，它包含两种：
+
+loalStorage（长期储存）：
+生存
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-08
                             </span>
                         <span class="publish-author">
                             
