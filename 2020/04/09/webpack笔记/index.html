@@ -464,7 +464,7 @@ webpack 能够处理JS的兼容问题，把 高级的、浏览器不是别的语
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    4.4k
                 </div>
                 
 
@@ -673,14 +673,59 @@ webpack: Compiled successfully.</code></pre><h3 id="bundle-js放在内存中"><a
 <h3 id="使用webpack处理css中的路径"><a href="#使用webpack处理css中的路径" class="headerlink" title="使用webpack处理css中的路径"></a>使用webpack处理css中的路径</h3><ol>
 <li>运行<code>cnpm i url-loader file-loader --save-dev</code></li>
 <li>在<code>webpack.config.js</code>中添加处理url路径的loader模块：<pre><code>{ test: /\.(png|jpg|gif)$/, use: 'url-loader' }</code></pre></li>
-<li>可以通过<code>limit</code>指定进行base64编码的图片大小；只有小于指定字节（byte）的图片才会进行base64编码：<pre><code>{ test: /\.(png|jpg|gif)$/, use: 'url-loader?limit=43960' },</code></pre></li>
+<li>可以通过<code>limit</code>指定进行base64编码的图片大小；只有小于指定字节（byte）的图片才会进行base64编码：</li>
 </ol>
-<h2 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h2><ul>
+<p><code>name=[hash:8]-[name].[ext]</code><br>    - <code>[hash:8]-</code>每张图片前面放个8位hash值，防止图片重名显示重复<br>    - <code>[name].[ext]</code>表示用图片本身的<code>名称</code>和<code>后缀名</code></p>
+<pre><code>{  test: /\.(jpg|png|gif|bmp|jpeg)$/, use: 'url-loader?limit=7631&amp;name=[hash:8]-[name].[ext]'  },</code></pre><h2 id="Babel将高级的语法转换为低级的语法"><a href="#Babel将高级的语法转换为低级的语法" class="headerlink" title="Babel将高级的语法转换为低级的语法"></a>Babel将高级的语法转换为低级的语法</h2><p>在 webpack 中，默认只能处理 一部分 <code>ES6</code> 的新语法，一些<code>更高级的ES6语法或者 ES7 语法</code>，webpack 是处理不了的；<br>这时候，就需要 借助于第三方的 <code>loader</code>，来帮助webpack 处理这些高级的语法，<br>当第三方loader 把 高级语法转为 低级的语法之后，会把结果交给 webpack 去打包到 bundle.js 中</p>
+<p>通过 <code>Babel</code> ，可以帮我们将 高级的语法转换为 低级的语法</p>
+<ol>
+<li><p>在 webpack 中，可以运行如下两套 命令，安装两套包，去安装 <code>Babel</code> 相关的<code>loader</code>功能：<br> 1.1 第一套包： <code>cnpm i babel-core babel-loader babel-plugin-transform-runtime -D</code><br> 1.2 第二套包： <code>cnpm i babel-preset-env babel-preset-stage-0 -D</code></p>
+</li>
+<li><p>打开 <code>webpack</code> 的配置文件，在 <code>module</code> 节点下的 <code>rules</code> 数组中，添加一个 新的 匹配规则：</p>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token punctuation">{</span> test<span class="token punctuation">:</span><span class="token regex">/\.js$/</span><span class="token punctuation">,</span> use<span class="token punctuation">:</span> <span class="token string">'babel-loader'</span><span class="token punctuation">,</span> exclude<span class="token punctuation">:</span><span class="token regex">/node_modules/</span> <span class="token punctuation">}</span></code></pre>
+<p>注意： 在配置 <code>babel</code> 的 <code>loader</code>规则的时候，必须 把 <code>node_modules</code> 目录，通过 <code>exclude</code> 选项排除掉：原因有俩：</p>
+</li>
+</ol>
+<ul>
+<li>如果 不排除 <code>node_modules</code>， 则<code>Babel</code> 会把 <code>node_modules</code> 中所有的 第三方 <code>JS</code> 文件，都打包编译，这样，会非常消耗CPU，</li>
+<li>同时，打包速度非常慢；哪怕，最终，<code>Babel</code> 把 所有 <code>node_modules</code> 中的<code>JS</code>转换完毕了，但是，项目也无法正常运行！</li>
+</ul>
+<ol start="3">
+<li>在项目的 根目录中，新建一个 叫做 <code>.babelrc</code>  的<code>Babel</code> 配置文件，这个配置文件，属于<code>JSON</code>格式，所以，在写 <code>.babelrc</code> 配置的时候，必须符合<code>JSON</code>语法规范： <code>不能写注释，字符串必须用双引号</code><br> 3.1 在 .babelrc 写如下的配置：  大家可以把 preset 翻译成 【语法】 的意思</li>
+</ol>
+<pre class=" language-json"><code class="language-json">         <span class="token punctuation">{</span>
+           <span class="token property">"presets"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"env"</span><span class="token punctuation">,</span> <span class="token string">"stage-0"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+           <span class="token property">"plugins"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"transform-runtime"</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span></code></pre>
+<ol start="4">
+<li>了解： 目前，我们安装的 babel-preset-env, 是比较新的ES语法， 之前， 我们安装的是 babel-preset-es2015, 现在，出了一个更新的 语法插件，叫做 babel-preset-env ，它包含了 所有的 和 es***相关的语法</li>
+</ol>
+<h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h3><pre><code>Module build failed (from ./node_modules/_babel-loader@8.1.0@babel-loader/lib/index.js):
+Error: Cannot find module '@babel/core'</code></pre><p>官方默认<code>babel-loader | babel</code>对应的版本需要一致: 即最新<code>babel-loader</code>需要搭配最新版本<code>babel</code><br>解决方法：回退低版本(或者均更新到最高版本)</p>
+<pre><code>npm install -D babel-loader@7 babel-core babel-preset-env</code></pre><h2 id="webpack-中如何使用-vue"><a href="#webpack-中如何使用-vue" class="headerlink" title="webpack 中如何使用 vue"></a>webpack 中如何使用 vue</h2><ol>
+<li>安装vue的包：<code>cnpm i vue -S</code></li>
+<li>由于 在 <code>webpack</code> 中，推荐使用 <code>.vue</code> 这个组件模板文件定义组件，所以，需要安装能解析这种文件的 <code>loader</code>:<code>cnpm i vue-loader vue-template-complier -D</code><ul>
+<li>在<code>webpack.config</code>配置<code>loader</code><ul>
+<li><code>const VueLoaderPlugin = require('_vue-loader@15.9.1@vue-loader/lib/plugin')</code></li>
+<li>在<code>plugin[]</code>中<code>new VueLoaderPlugin()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在 <code>main.js</code> 中，导入 <code>vue</code> 模块  <code>import Vue from 'vue'</code></li>
+<li>定义一个 <code>.vue</code> 结尾的组件，其中，组件有三部分组成： <code>template script style</code></li>
+<li>使用 <code>import login from './login.vue'</code> 导入这个组件</li>
+<li>创建 vm 的实例 <code>var vm = new Vue({ el: '#app', render: c =&gt; c(login) })</code></li>
+<li>在页面中创建一个 <code>id</code> 为 <code>app</code> 的 <code>div</code> 元素，作为我们 vm 实例要控制的区域；</li>
+</ol>
+<h2 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h2><h3 id="一句话tips"><a href="#一句话tips" class="headerlink" title="一句话tips"></a>一句话tips</h3><ul>
 <li>webpack里面带<code>s</code>的都是数组，例如<code>plugins</code></li>
 <li><code>import *** from ***</code> 是ES6中导入模块的方式</li>
 <li><code>import './css/index.css'</code> 一般js才会<code>import *** from ***</code>，css直接<code>import</code></li>
+<li><code>JSON</code>里面不能写注释</li>
+<li>万能解决：把<code>node_modules</code>删了，然后<code>npm i</code>重装所有的包</li>
 </ul>
-<h2 id="npm常用指令"><a href="#npm常用指令" class="headerlink" title="npm常用指令"></a>npm常用指令</h2><p><a href="https://blog.csdn.net/jwl_willon/article/details/81054978" target="_blank" rel="noopener">参考1</a>   <a href="https://www.cnblogs.com/yuesu/p/10980848.html
+<h3 id="npm常用指令"><a href="#npm常用指令" class="headerlink" title="npm常用指令"></a>npm常用指令</h3><p><a href="https://blog.csdn.net/jwl_willon/article/details/81054978" target="_blank" rel="noopener">参考1</a>   <a href="https://www.cnblogs.com/yuesu/p/10980848.html
 ">参考2</a></p>
 <ol>
 <li><p><code>npm install</code> &lt;=&gt; <code>npm i</code><br><code>--save</code>   &lt;=&gt; <code>-S</code><br><code>--save-dev</code>  &lt;=&gt; <code>-D</code><br><code>npm run start</code> &lt;=&gt; <code>npm start</code>  // 对应”scripts”里的”start”命令</p>
@@ -697,7 +742,7 @@ webpack: Compiled successfully.</code></pre><h3 id="bundle-js放在内存中"><a
 <li>安装模块到项目<code>node_modules</code>目录下</li>
 <li>并在<code>package</code>文件的<code>devDependencies</code>属性写入依赖</li>
 <li>运行 <code>npm install</code> 初始化项目时，会将模块下载到项目目录下</li>
-<li>运行<code>npm install --productio</code>n或者注明<code>NODE_ENV</code>变量值为<code>production</code>时，不会自动下载模块到<code>node_modules</code>目录中</li>
+<li>运行<code>npm install --production</code>或者注明<code>NODE_ENV</code>变量值为<code>production</code>时，不会自动下载模块到<code>node_modules</code>目录中</li>
 <li>工程构建（开发时、“打包”时）依赖 ；例：xxx-cli , less-loader , babel-loader…</li>
 </ul>
 </li>
@@ -724,6 +769,79 @@ webpack: Compiled successfully.</code></pre><h3 id="bundle-js放在内存中"><a
 <ol start="7">
 <li>在新建<code>package.json</code>文件时，我们可以使用<code>npm init -y</code> 快速创建（yes 表示一路默认创建，还有 -f 表示 force）</li>
 </ol>
+<h3 id="path-resolve和path-join"><a href="#path-resolve和path-join" class="headerlink" title="path.resolve和path.join"></a><code>path.resolve</code>和<code>path.join</code></h3><h4 id="path-resolve"><a href="#path-resolve" class="headerlink" title="path.resolve"></a><code>path.resolve</code></h4><p>参考：<a href="https://blog.csdn.net/iconhot/article/details/89257576" target="_blank" rel="noopener">https://blog.csdn.net/iconhot/article/details/89257576</a></p>
+<ul>
+<li><p>作用：<code>path.resolve()</code> 该方法将一些的 路径/路径段 解析为<code>绝对路径</code>。</p>
+</li>
+<li><p>语法：<code>path.resolve( [from…],to )</code></p>
+</li>
+<li><p>说明：将参数<code>to</code>位置的字符解析到一个绝对路径里，<code>[from … ]</code>为选填项，路径源</p>
+</li>
+<li><p>总结：</p>
+<ul>
+<li>从后向前</li>
+<li>若字符以<code>/</code>开头，不会拼接到前面的路径；</li>
+<li>若以 <code>…/</code>开头，拼接前面的路径，且不含最后一节路径；</li>
+<li>若连续出现多个<code>…/…/…</code>或者<code>…/…</code>则忽略前方<code>…</code>个路径名进行拼接；</li>
+<li>若以<code>./</code> 开头 或者<code>没有符号</code> 则拼接前面路径；</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true">//引入node的path模块</span>
+
+path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'/foo/bar'</span><span class="token punctuation">,</span> <span class="token string">'./baz'</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">// returns '/foo/bar/baz'</span>
+path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'/foo/bar'</span><span class="token punctuation">,</span> <span class="token string">'baz'</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">// returns '/foo/bar/baz'</span>
+path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'/foo/bar'</span><span class="token punctuation">,</span> <span class="token string">'/baz'</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">// returns '/baz'</span>
+path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'/foo/bar'</span><span class="token punctuation">,</span> <span class="token string">'../baz'</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">// returns '/foo/baz'</span>
+path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'home'</span><span class="token punctuation">,</span><span class="token string">'/foo/bar'</span><span class="token punctuation">,</span> <span class="token string">'../baz'</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">// returns '/foo/baz'</span>
+path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'home'</span><span class="token punctuation">,</span><span class="token string">'./foo/bar'</span><span class="token punctuation">,</span> <span class="token string">'../baz'</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">// returns '/home/foo/baz'</span>
+path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'home'</span><span class="token punctuation">,</span><span class="token string">'foo/bar'</span><span class="token punctuation">,</span> <span class="token string">'../baz'</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">// returns '/home/foo/baz'</span>
+path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'home'</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'build'</span><span class="token punctuation">,</span><span class="token string">'aaaa'</span><span class="token punctuation">,</span><span class="token string">'aadada'</span><span class="token punctuation">,</span><span class="token string">'../../..'</span><span class="token punctuation">,</span> <span class="token string">'asset'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//return '/home/foo/asset'</span></code></pre>
+<h4 id="path-join"><a href="#path-join" class="headerlink" title="path.join"></a><code>path.join</code></h4><p>参考：<a href="https://www.cnblogs.com/yangjie-space/p/10569982.html" target="_blank" rel="noopener">https://www.cnblogs.com/yangjie-space/p/10569982.html</a></p>
+<ul>
+<li><p>作用：<code>path.join()</code>方法使用平台特定的分隔符把全部给定的 <code>path</code> 片段连接到一起，并规范化生成的路径。</p>
+</li>
+<li><p>语法：<code>path.resolve([...paths])</code></p>
+</li>
+<li><p>说明：</p>
+<ul>
+<li>长度为零的 path 片段会被忽略。 </li>
+<li>如果连接后的路径字符串是一个长度为零的字符串，则返回 <code>.</code>，表示当前工作目录</li>
+</ul>
+</li>
+<li><p>和<code>path.resolve</code>的区别</p>
+<ul>
+<li><code>join()</code>只是拼接各个<code>path</code>片段，并不像<code>resolve()</code>一样除了拼接各个字段还拼接了工作目录的路径</li>
+<li>如果以<code>/</code>开头的字符串片段在<code>join</code>并不像<code>resolve</code>一样是只返回自身</li>
+<li>还有就是<code>..</code> 同 <code>../</code>是一个意思，都代表上一级</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript">path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/img'</span><span class="token punctuation">,</span> <span class="token string">'book'</span><span class="token punctuation">,</span> <span class="token string">'net/abc'</span><span class="token punctuation">,</span> <span class="token string">'inter'</span><span class="token punctuation">,</span> <span class="token string">'..'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// returns /img/book/net/abc</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/img/books'</span><span class="token punctuation">,</span> <span class="token string">'../net'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// returns /img/net</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'img/books'</span><span class="token punctuation">,</span> <span class="token string">'../net'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// returns img/net</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/img/books'</span><span class="token punctuation">,</span> <span class="token string">'./net'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// returns /img/books/net</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'img/books'</span><span class="token punctuation">,</span> <span class="token string">'./net'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// returns img/books/net</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/img/books'</span><span class="token punctuation">,</span> <span class="token string">'net'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// returns /img/books/net</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'img/books'</span><span class="token punctuation">,</span> <span class="token string">'net'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// returns /img/books/net</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/img/books'</span><span class="token punctuation">,</span> <span class="token string">'/net'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// returns /img/books/net</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'img/books'</span><span class="token punctuation">,</span> <span class="token string">'/net'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// returns img/books/net</span></code></pre>
+<h3 id="静态属性和实例属性"><a href="#静态属性和实例属性" class="headerlink" title="静态属性和实例属性"></a>静态属性和实例属性</h3><ul>
+<li>静态属性：可以直接通过类名，直接访问的属性</li>
+<li>实例属性：只能通过类的实例，来访问的属性</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token keyword">function</span> <span class="token function">Animal</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">this</span><span class="token punctuation">.</span>name  <span class="token operator">=</span> name
+ <span class="token punctuation">}</span>
+ Animal<span class="token punctuation">.</span>info <span class="token operator">=</span> <span class="token number">123</span>
+
+ <span class="token keyword">var</span> a1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token string">'小花'</span><span class="token punctuation">)</span>
+
+ <span class="token comment" spellcheck="true">// 这是静态属性：</span>
+ <span class="token comment" spellcheck="true">// console.log(Animal.info)</span>
+ <span class="token comment" spellcheck="true">// 这是实例属性：</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a1<span class="token punctuation">.</span>name<span class="token punctuation">)</span></code></pre>
+<p>静态属性是直接挂载在对象<code>Animal</code>上的（函数就是一个对象）<br>实例属性是通过<code>new Animal</code>开辟出一块新的内存，挂载在新内存上</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1222,7 +1340,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.9k</span>&nbsp;字
+                class="white-color">22.4k</span>&nbsp;字
             
             
             
