@@ -562,8 +562,13 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                闭包和作用域作用域函数执行的时候才会开辟内存空间函数执行时会开辟一块内存空间，每次调用时开辟的是不同的内存。函数里面定义的变量，在函数内部可用（包括子函数）
-闭包原理让这个函数里的东西在全局被使用，比如把函数hd()里面的sum()给ret
+                                闭包和作用域作用域
+函数执行的时候才会开辟内存空间
+函数每次调用时开辟的是不同的内存
+函数里面定义的变量，在函数内部可用（包括子函数）
+
+闭包原理闭包：函数可以访问到其他函数作用域中的数据
+让这个函数里的东西在全局被使用，比如把函数hd()
                             
                         </div>
                         <div class="publish-info">
@@ -572,13 +577,25 @@
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                Kaaaaaaious
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                                
                                 
                             </span>
                         </div>
                     </div>
 
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E9%97%AD%E5%8C%85/">
+                            <span class="chip bg-color">闭包</span>
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -598,10 +615,12 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                                变量基础var let const共同点
+函数中可以访问全局变量
+函数内部是私有领地，就近原则，如果变量没声明会去外部查找，
+变量不声明，会产生全局污染，就是函数内部定义的变量，外面也能用。
+
+var变量提升声明可以写在执行语句之后，在执行
                             
                         </div>
                         <div class="publish-info">
@@ -610,13 +629,25 @@
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                Kaaaaaaious
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                                
                                 
                             </span>
                         </div>
                     </div>
 
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E5%8F%98%E9%87%8F/">
+                            <span class="chip bg-color">变量</span>
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -636,9 +667,11 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                正则表达式//正则表达式
-let reg = /https?:\/\/((?:\w+\.)?\w+\.(?:com|org|cn))/gi
-https?!表示s可以有可以没有(?:\w+\.)表示这个原子组不会被记录到编号里，就是不会被记录
+                                正则表达式原子表原子表中有些正则字符不需要转义 [.+()]原子表中. 就是小数点，+就是加号
+原子组 ()
+如果一次要匹配多个元子，可以通过元子组完成
+原子组与原子表的差别在于原子组一次匹配多个元子，而原子表则是匹配任意一个字符
+元字符组
                             
                         </div>
                         <div class="publish-info">
@@ -1159,7 +1192,7 @@ VUE视频教程VUE视频教程P38 18.vue-resource发起get、post、jsonp请求P
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">24.7k</span>&nbsp;字
+                class="white-color">26.3k</span>&nbsp;字
             
             
             

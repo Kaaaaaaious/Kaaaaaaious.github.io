@@ -5,8 +5,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="闭包和作用域, MOONPIE">
-    <meta name="description" content="闭包和作用域作用域函数执行的时候才会开辟内存空间函数执行时会开辟一块内存空间，每次调用时开辟的是不同的内存。函数里面定义的变量，在函数内部可用（包括子函数）
-闭包原理让这个函数里的东西在全局被使用，比如把函数hd()里面的sum()给ret">
+    <meta name="description" content="闭包和作用域作用域
+函数执行的时候才会开辟内存空间
+函数每次调用时开辟的是不同的内存
+函数里面定义的变量，在函数内部可用（包括子函数）
+
+闭包原理闭包：函数可以访问到其他函数作用域中的数据
+让这个函数里的东西在全局被使用，比如把函数hd()">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -424,12 +429,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%97%AD%E5%8C%85/">
+                                <span class="chip bg-color">闭包</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JavaScript/" class="post-category">
+                                JavaScript
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -460,8 +478,18 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="闭包和作用域"><a href="#闭包和作用域" class="headerlink" title="闭包和作用域"></a>闭包和作用域</h1><h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>函数执行的时候才会开辟内存空间<br>函数执行时会开辟一块内存空间，每次调用时开辟的是不同的内存。<br>函数里面定义的变量，在函数内部可用（包括子函数）</p>
-<h2 id="闭包原理"><a href="#闭包原理" class="headerlink" title="闭包原理"></a>闭包原理</h2><p>让这个函数里的东西在全局被使用，比如把函数<code>hd()</code>里面的<code>sum()</code>给<code>return</code>出去赋值给函数外局定义的一个变量<code>a</code><br>有人用它，这个函数内的东西（如定义的变量）就不会被销毁<br>而且并不是return出的这个东西不会被销毁，是整个函数都不会</p>
+                <h1 id="闭包和作用域"><a href="#闭包和作用域" class="headerlink" title="闭包和作用域"></a>闭包和作用域</h1><h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
+<li>函数执行的时候才会开辟内存空间</li>
+<li>函数每次调用时开辟的是不同的内存</li>
+<li>函数里面定义的变量，在函数内部可用（包括子函数）</li>
+</ul>
+<h2 id="闭包原理"><a href="#闭包原理" class="headerlink" title="闭包原理"></a>闭包原理</h2><p><strong>闭包：函数可以访问到其他函数作用域中的数据</strong></p>
+<p>让这个函数里的东西在全局被使用，比如把函数<code>hd()</code>里面的<code>sum()</code>给<code>return</code>出去赋值给函数外部全局定义的一个变量<code>a</code></p>
+<ul>
+<li>有人用它，这个函数内的东西（如定义的变量）就不会被销毁</li>
+<li>而且并不是return出的这个东西不会被销毁，是整个函数都不会</li>
+</ul>
+<hr>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">hd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">let</span> n <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -473,6 +501,7 @@
 <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输出n=2</span>
 <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输出n=3</span></code></pre>
 <p>因为<code>hd()</code>创建的里面的东西<code>sum()</code>被外部引用了，所以<code>hd()</code>开辟的内存不会被销毁</p>
+<hr>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">hd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">let</span> n <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -487,6 +516,7 @@
 <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输出m=2</span>
 <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输出m=2</span></code></pre>
 <p>虽然<code>hd()</code>创建的里面<code>sum()</code>被外部引用了，因此<code>hd()</code>里面的<code>n</code>和<code>sum()</code>本身不会被销毁<br>但是<code>sum()</code>里面的内容没有被外部引用，所以每次调用<code>sum()</code>,都会重新为<code>sum()</code>里的内容重新开辟内存空间</p>
+<hr>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">hd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">let</span> n <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -520,23 +550,22 @@ b<span class="token punctuation">.</span><span class="token function">sum</span>
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p>输出3个4，因为var没有块级作用域的概念，i是全局的<br>setTimeout异步，for循环结束完了才执行setTimeout内容</p>
+<p>输出3个4，因为<code>var</code>没有块级作用域的概念，<code>i</code>是全局的<br><code>setTimeout</code>异步，<code>for</code>循环结束完了才执行<code>setTimeout</code>内容</p>
 <h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p>输出1，2，3，因为每一次循环都开辟新的内存空间，里面i分别等于1，2，3</p>
-<h3 id="为var模拟块级作用域"><a href="#为var模拟块级作用域" class="headerlink" title="为var模拟块级作用域"></a>为var模拟块级作用域</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<p>输出1，2，3，因为每一次循环，执行一次循环体函数，都开辟新的内存空间，里面<code>i</code>分别等于1，2，3</p>
+<h3 id="为var模拟块级作用域"><a href="#为var模拟块级作用域" class="headerlink" title="为var模拟块级作用域"></a>为var模拟块级作用域</h3><h4 id="案例1"><a href="#案例1" class="headerlink" title="案例1"></a>案例1</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
             console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p>输出1，2，3，因为var有函数作用域，把i传给立即执行的函数，函数每次调用会有独立的作用域</p>
-<p>###</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<p>输出1，2，3，因为<code>var</code>有函数作用域，把<code>i</code>传给立即执行的函数，函数每次调用会有独立的作用域</p>
+<h4 id="案例2"><a href="#案例2" class="headerlink" title="案例2"></a>案例2</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
 <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">return</span> i<span class="token punctuation">;</span>
@@ -561,8 +590,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>；
 <span class="token punctuation">}</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//返回2</span></code></pre>
-<p><code>for</code>循环内开辟的那个内存空间里，又开辟了<code>function(a)</code>的空间，<code>function(a)</code>里面保存了当时<code>i</code>的值，同时又开辟了<code>function(){return i;}</code>的空间。<br>执行<code>arr[1]()</code>时，可以访问到<code>function(a)</code>存块里面的<code>i=2</code></p>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>闭包：函数可以访问到其他函数作用域中的数据</p>
+<p><code>for</code>循环内开辟的那个内存空间里，又开辟了<code>function(a)</code>的空间，<code>function(a)</code>里面保存了当时<code>i</code>的值，同时又开辟了<code>function(){return i;}</code>的空间。<br>执行<code>arr[1]()</code>时，可以访问到<code>function(a)</code>内存块里面的<code>i=2</code></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -643,7 +671,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E9%97%AD%E5%8C%85/">
+                                    <span class="chip bg-color">闭包</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -824,8 +856,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            闭包和作用域作用域函数执行的时候才会开辟内存空间函数执行时会开辟一块内存空间，每次调用时开辟的是不同的内存。函数里面定义的变量，在函数内部可用（包括子函数）
-闭包原理让这个函数里的东西在全局被使用，比如把函数hd()里面的sum()给ret
+                            闭包和作用域作用域
+函数执行的时候才会开辟内存空间
+函数每次调用时开辟的是不同的内存
+函数里面定义的变量，在函数内部可用（包括子函数）
+
+闭包原理闭包：函数可以访问到其他函数作用域中的数据
+让这个函数里的东西在全局被使用，比如把函数hd()
                         
                     </div>
                     <div class="publish-info">
@@ -834,13 +871,25 @@ console<span class="token punctuation">.</span><span class="token function">log<
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Kaaaaaaious
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%97%AD%E5%8C%85/">
+                        <span class="chip bg-color">闭包</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -863,10 +912,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            变量基础var let const共同点
+函数中可以访问全局变量
+函数内部是私有领地，就近原则，如果变量没声明会去外部查找，
+变量不声明，会产生全局污染，就是函数内部定义的变量，外面也能用。
+
+var变量提升声明可以写在执行语句之后，在执行
                         
                     </div>
                     <div class="publish-info">
@@ -875,11 +926,23 @@ console<span class="token punctuation">.</span><span class="token function">log<
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Kaaaaaaious
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8F%98%E9%87%8F/">
+                        <span class="chip bg-color">变量</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1028,7 +1091,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">24.7k</span>&nbsp;字
+                class="white-color">26.3k</span>&nbsp;字
             
             
             
