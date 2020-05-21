@@ -463,7 +463,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.7k
                 </div>
                 
 
@@ -647,73 +647,29 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="正则的方法"><a href="#正则的方法" class="headerlink" title="正则的方法"></a>正则的方法</h2><h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><p>检测输入的邮箱是否合法，返回<code>true</code>或<code>false</code></p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
-  <input type="text" name="email">
-
-
-<script>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span>
   let email = document.querySelector(`[name="email"]`);
   email.addEventListener("keyup", e => {
     console.log(/^\w+@\w+\.\w+$/.test(e.target.value));
-  });
-
-### exec
-- 会返回细节
-- 不使用`g` 修饰符时与 `match` 方法使用相似，使用 `g` 修饰符后可以循环调用直到全部匹配完。
-- 使用 `g` 修饰符多次操作时使用同一个正则，即把正则定义为变量使用
-- 使用 `g` 修饰符最后匹配不到时返回 `null`
-
-## 断言
-
-### `(?=xxx)` 后面是
-`/hello(?=world)/`  匹配后面紧跟`world`的`hello`，类似条件语句
-匹配到的内容不包括`world`
-
-### `(?<=xxx)` 前面是
-`/(?<=hello)world/`  匹配前面是`hello`的`world`，匹配到的内容不包括`hello`
-
-### `(?!xxx)` 后面不是
-`/[a-z]+(?!\d+)/` 匹配后面不是数字的字母
-
-### `(?<!xxx)` 前面不是
-`/(?<!\d+)[a-z]+/` 匹配前面不是数字的字母
-
-## 元子字符
-
-### `/^ $/`开始-结束
-
-### `/s/`空白 - `/S/`除了空白
-空格，换行`/n` 都是空白
-
-### `.`除了换行符外任何字符
-`/.+/s`可以匹配到换行以后的东西，因为`s`表示匹配单行模式
-
-### `/w`字母 数字 下划线 - `/W`除了字母 数字 下划线
-
-### `/d`/ 数字 `/D`/ 除了数字
-
-### 空格是普通字符 `/\d+/s-\s\d+/`等于`/\d+ - \d+/`
-
-### 匹配所有字符 `/[\s\S]/` `/[\d\D]/` 包括换行
-
-## 模式修饰
-
-### `i`不缺分大写 
-
-### `g`匹配全部 
-
-### `m`每行单独处理 
-
-### `u`匹配宽字节 
-
-### `y`在匹配不到时停止匹配
-
-### lastIndex 返回或者设置正则表达式开始匹配的位置
-RegExp对象`lastIndex` 属性可以返回或者设置正则表达式开始匹配的位置
-必须结合 `g` 修饰符使用
-对 `exec` 方法有效
-匹配完成时，`lastIndex` 会被重置为`0`
-</script><script>
+  });</code></pre>
+<h3 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h3><ul>
+<li>会返回细节</li>
+<li>不使用<code>g</code> 修饰符时与 <code>match</code> 方法使用相似，使用 <code>g</code> 修饰符后可以循环调用直到全部匹配完。</li>
+<li>使用 <code>g</code> 修饰符多次操作时使用同一个正则，即把正则定义为变量使用</li>
+<li>使用 <code>g</code> 修饰符最后匹配不到时返回 <code>null</code></li>
+</ul>
+<h2 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h2><h3 id="xxx-后面是"><a href="#xxx-后面是" class="headerlink" title="(?=xxx) 后面是"></a><code>(?=xxx)</code> 后面是</h3><p><code>/hello(?=world)/</code>  匹配后面紧跟<code>world</code>的<code>hello</code>，类似条件语句<br>匹配到的内容不包括<code>world</code></p>
+<h3 id="lt-xxx-前面是"><a href="#lt-xxx-前面是" class="headerlink" title="(?<=xxx) 前面是"></a><code>(?&lt;=xxx)</code> 前面是</h3><p><code>/(?&lt;=hello)world/</code>  匹配前面是<code>hello</code>的<code>world</code>，匹配到的内容不包括<code>hello</code></p>
+<h3 id="xxx-后面不是"><a href="#xxx-后面不是" class="headerlink" title="(?!xxx) 后面不是"></a><code>(?!xxx)</code> 后面不是</h3><p><code>/[a-z]+(?!\d+)/</code> 匹配后面不是数字的字母</p>
+<h3 id="lt-xxx-前面不是"><a href="#lt-xxx-前面不是" class="headerlink" title="(?<!xxx) 前面不是"></a><code>(?&lt;!xxx)</code> 前面不是</h3><p><code>/(?&lt;!\d+)[a-z]+/</code> 匹配前面不是数字的字母</p>
+<h2 id="元子字符"><a href="#元子字符" class="headerlink" title="元子字符"></a>元子字符</h2><h3 id="开始-结束"><a href="#开始-结束" class="headerlink" title="/^ $/开始-结束"></a><code>/^ $/</code>开始-结束</h3><h3 id="s-空白-S-除了空白"><a href="#s-空白-S-除了空白" class="headerlink" title="/s/空白 - /S/除了空白"></a><code>/s/</code>空白 - <code>/S/</code>除了空白</h3><p>空格，换行<code>/n</code> 都是空白</p>
+<h3 id="除了换行符外任何字符"><a href="#除了换行符外任何字符" class="headerlink" title=".除了换行符外任何字符"></a><code>.</code>除了换行符外任何字符</h3><p><code>/.+/s</code>可以匹配到换行以后的东西，因为<code>s</code>表示匹配单行模式</p>
+<h3 id="w字母-数字-下划线-W除了字母-数字-下划线"><a href="#w字母-数字-下划线-W除了字母-数字-下划线" class="headerlink" title="/w字母 数字 下划线 - /W除了字母 数字 下划线"></a><code>/w</code>字母 数字 下划线 - <code>/W</code>除了字母 数字 下划线</h3><h3 id="d-数字-D-除了数字"><a href="#d-数字-D-除了数字" class="headerlink" title="/d/ 数字 /D/ 除了数字"></a><code>/d</code>/ 数字 <code>/D</code>/ 除了数字</h3><h3 id="空格是普通字符-d-s-s-d-等于-d-d"><a href="#空格是普通字符-d-s-s-d-等于-d-d" class="headerlink" title="空格是普通字符 /\d+/s-\s\d+/等于/\d+ - \d+/"></a>空格是普通字符 <code>/\d+/s-\s\d+/</code>等于<code>/\d+ - \d+/</code></h3><h3 id="匹配所有字符-s-S-d-D-包括换行"><a href="#匹配所有字符-s-S-d-D-包括换行" class="headerlink" title="匹配所有字符 /[\s\S]/ /[\d\D]/ 包括换行"></a>匹配所有字符 <code>/[\s\S]/</code> <code>/[\d\D]/</code> 包括换行</h3><h2 id="模式修饰"><a href="#模式修饰" class="headerlink" title="模式修饰"></a>模式修饰</h2><h3 id="i不缺分大写"><a href="#i不缺分大写" class="headerlink" title="i不缺分大写"></a><code>i</code>不缺分大写</h3><h3 id="g匹配全部"><a href="#g匹配全部" class="headerlink" title="g匹配全部"></a><code>g</code>匹配全部</h3><h3 id="m每行单独处理"><a href="#m每行单独处理" class="headerlink" title="m每行单独处理"></a><code>m</code>每行单独处理</h3><h3 id="u匹配宽字节"><a href="#u匹配宽字节" class="headerlink" title="u匹配宽字节"></a><code>u</code>匹配宽字节</h3><h3 id="y在匹配不到时停止匹配"><a href="#y在匹配不到时停止匹配" class="headerlink" title="y在匹配不到时停止匹配"></a><code>y</code>在匹配不到时停止匹配</h3><h3 id="lastIndex-返回或者设置正则表达式开始匹配的位置"><a href="#lastIndex-返回或者设置正则表达式开始匹配的位置" class="headerlink" title="lastIndex 返回或者设置正则表达式开始匹配的位置"></a>lastIndex 返回或者设置正则表达式开始匹配的位置</h3><p>RegExp对象<code>lastIndex</code> 属性可以返回或者设置正则表达式开始匹配的位置<br>必须结合 <code>g</code> 修饰符使用<br>对 <code>exec</code> 方法有效<br>匹配完成时，<code>lastIndex</code> 会被重置为<code>0</code></p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1206,7 +1162,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">26.3k</span>&nbsp;字
+                class="white-color">30.7k</span>&nbsp;字
             
             
             
