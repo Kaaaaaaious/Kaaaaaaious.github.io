@@ -5,11 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="js数组, MOONPIE">
-    <meta name="description" content="js数组Array.of使用Array.of 与 new Array 不同是设置一个参数时不会创建空元素数组
+    <meta name="description" content="js数组Array.of 创建数组使用Array.of 与 new Array 不同是设置一个参数时不会创建空元素数组
 let hd = Array.of(3);
 console.log(hd); //[3]
 
-hd = Array.of(1, 2,">
+hd = Array.of(">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -476,7 +476,7 @@ hd = Array.of(1, 2,">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="js数组"><a href="#js数组" class="headerlink" title="js数组"></a>js数组</h1><h2 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of"></a>Array.of</h2><p>使用<code>Array.of</code> 与 <code>new Array</code> 不同是设置一个参数时<code>不会创建空元素数组</code></p>
+                <h1 id="js数组"><a href="#js数组" class="headerlink" title="js数组"></a>js数组</h1><h2 id="Array-of-创建数组"><a href="#Array-of-创建数组" class="headerlink" title="Array.of 创建数组"></a>Array.of 创建数组</h2><p>使用<code>Array.of</code> 与 <code>new Array</code> 不同是设置一个参数时<code>不会创建空元素数组</code></p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> hd <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token keyword">of</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>hd<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//[3]</span>
 
@@ -484,7 +484,7 @@ hd <span class="token operator">=</span> Array<span class="token punctuation">.<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>hd<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//[1, 2, 3]</span>
 
 <span class="token keyword">let</span> hdd<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//产生3个空元素</span></code></pre>
-<h2 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from"></a>Array.from</h2><p>使用<code>Array.from</code>可将<code>类数组</code>转换为数组，类数组指<code>包含 length 属性或可迭代的对象</code>。</p>
+<h2 id="Array-from-类型转换"><a href="#Array-from-类型转换" class="headerlink" title="Array.from 类型转换"></a>Array.from 类型转换</h2><p>使用<code>Array.from</code>可将<code>类数组</code>转换为数组，类数组指<code>包含 length 属性或可迭代的对象</code>。</p>
 <ul>
 <li><p>第一个参数为<code>要转换的数据</code>，第二个参数为类似于map 函数的<code>回调方法</code></p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">'后盾人'</span><span class="token punctuation">;</span>
@@ -502,6 +502,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">message</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>后盾人<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">message</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hdcms<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+      <span class="token keyword">let</span> btns <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>btns<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//包含length属性</span>
+      Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span>btns<span class="token punctuation">,</span> <span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+          item<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background <span class="token operator">=</span> <span class="token string">'red'</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></code></pre>
 </li>
 </ul>
@@ -519,7 +526,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>site<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//后盾人 (3) [1, 2, 3]</span>
 <span class="token punctuation">}</span>
 <span class="token function">hd</span><span class="token punctuation">(</span><span class="token string">"后盾人"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="节点转换"><a href="#节点转换" class="headerlink" title="节点转换"></a>节点转换</h3><p>可以将<code>DOM</code>节点转为<code>数组</code>，下面例子<code>不可以使用 filter</code> 因为是节点列表</p>
+<h3 id="节点转换"><a href="#节点转换" class="headerlink" title="节点转换"></a>节点转换</h3><p>可以将<code>DOM</code>节点转为<code>数组</code>，下面例子<code>不可以使用 map</code> 因为是节点列表</p>
 <pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">message</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>后盾人<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">message</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hdcms<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
@@ -528,7 +535,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
     <span class="token keyword">let</span> btns <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     btns<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//TypeError: btns.filter is not a function</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//TypeError: btns.map is not a function</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
 <p>使用展开语法后就可以使用数据方法</p>
@@ -783,7 +790,7 @@ lessons<span class="token punctuation">.</span><span class="token function">forE
     item<span class="token punctuation">.</span>title <span class="token operator">=</span> item<span class="token punctuation">.</span>title<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>lessons<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>#for/in 遍历数组索引<br>遍历时的 key 值为数组的索引</p>
+<h3 id="for-in-遍历数组索引"><a href="#for-in-遍历数组索引" class="headerlink" title="for/in 遍历数组索引"></a>for/in 遍历数组索引</h3><p>遍历时的 key 值为数组的索引</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> lessons <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token punctuation">{</span>title<span class="token punctuation">:</span> <span class="token string">'媒体查询响应式布局'</span><span class="token punctuation">,</span>category<span class="token punctuation">:</span> <span class="token string">'css'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>title<span class="token punctuation">:</span> <span class="token string">'FLEX 弹性盒模型'</span><span class="token punctuation">,</span>category<span class="token punctuation">:</span> <span class="token string">'css'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -928,7 +935,31 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p>使用 reduce 与 reduceRight 函数可以迭代数组的所有元素，reduce 从前开始 reduceRight 从后面开始。下面通过函数计算课程点击数的和。</p>
 <p><code>arr.reduce(function(prev,cur,index,array),ini)</code><br>第一个参数是执行函数，第二个参数<code>ini</code>为初始值</p>
 <p>传入第二个参数时将所有元素循环一遍<br>不传第二个参数时从第二个元素开始循环</p>
-<p>执行函数参数说明如下：<br>参数|说明<br>-|-<br>prev|上次调用回调函数返回的结果，<br>cur|当前的元素值<br>index|当前的索引<br>array|原数组</p>
+<p>执行函数参数说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>prev</td>
+<td>上次调用回调函数返回的结果</td>
+</tr>
+<tr>
+<td>cur</td>
+<td>当前的元素值</td>
+</tr>
+<tr>
+<td>index</td>
+<td>当前的索引</td>
+</tr>
+<tr>
+<td>array</td>
+<td>原数组</td>
+</tr>
+</tbody></table>
 <p>统计元素出现的次数</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">countArrayELem</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> elem<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> array<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>total<span class="token punctuation">,</span> cur<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span>total <span class="token operator">+</span><span class="token operator">=</span> cur <span class="token operator">==</span> elem <span class="token operator">?</span> <span class="token number">1</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1259,11 +1290,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            js数组Array.of使用Array.of 与 new Array 不同是设置一个参数时不会创建空元素数组
+                            js数组Array.of 创建数组使用Array.of 与 new Array 不同是设置一个参数时不会创建空元素数组
 let hd = Array.of(3);
 console.log(hd); //[3]
 
-hd = Array.of(1, 2,
+hd = Array.of(
                         
                     </div>
                     <div class="publish-info">
@@ -1493,7 +1524,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.7k</span>&nbsp;字
+                class="white-color">30.8k</span>&nbsp;字
             
             
             
